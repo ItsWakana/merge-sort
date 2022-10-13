@@ -7,6 +7,7 @@ const merge = (left, right) => {
 }
 
 const mergeSort = (array) => {
+    console.log(array);
 
     if (array.length === 1) {
         return array;
@@ -25,11 +26,31 @@ const mergeSort = (array) => {
         right.push(array[i]);
     }
 
-    return merge(mergeSort(left), mergeSort(right));
+    // return merge(mergeSort(left), mergeSort(right));
+    // mergeSort(left);
+    // mergeSort(right);
+
+    const l = mergeSort(left);
+    const r = mergeSort(right);
+
+    return merge(l, r);
 
 }
 
-// console.log(mergeSort([1,6,3,4,5,2,7,8]));
+
+// const mergeSort = (array) => {
+//     if (array.length < 2) {
+//         return array;
+//     }
+
+//     const mid = Math.ceil(array.length / 2);
+
+//     const firstHalf = array.splice(0, mid);
+//     const secondHalf = array.splice(-mid);
+
+//     mergeSort(firstHalf);    
+//     mergeSort(secondHalf);    
+//     return merge(mergeSort(firstHalf), mergeSort(secondHalf));
+// }
 console.log(mergeSort([567,2,8,1,98,67,500]));
 
-//function takes in an array of numbers, divide the array by 2 so its a half. Which will give us two new arrays. Keep dividing the array by recursively calling the original function, until we have an array with a length of 1.
