@@ -37,7 +37,6 @@ const mergeSort = (array) => {
 
 }
 
-
 // const mergeSort = (array) => {
 //     if (array.length < 2) {
 //         return array;
@@ -52,4 +51,6 @@ const mergeSort = (array) => {
 //     mergeSort(secondHalf);    
 //     return merge(mergeSort(firstHalf), mergeSort(secondHalf));
 // }
+
 console.log(mergeSort([567,2,8,1,98,67,500]));
+
