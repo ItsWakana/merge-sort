@@ -21,19 +21,24 @@ const mergeSort = (array) => {
         let lIndex = 0;
         let rIndex = 0;
         let sortedArray = [];
-        while (lIndex <= l.length && rIndex <= r.length) {
-            if (l[lIndex] < r[rIndex]) {
+
+        while (lIndex < l.length && rIndex < r.length) {
+            if (l[lIndex] <= r[rIndex]) {
                 sortedArray.push(l[lIndex++]);
             } else {
                 sortedArray.push(r[rIndex++]);
             }
         }
-        return sortedArray;
 
-        // const merged = [...left, ...right];
-        // const sorted = merged.sort((a, b) => a - b);
-    
-        // return sorted;
+        for (; lIndex<l.length; lIndex++) {
+            sortedArray.push(l[lIndex]);
+        }
+
+        for (; rIndex<r.length; rIndex++) {
+            sortedArray.push(r[rIndex]);
+        }
+
+        return sortedArray;
 
     }
 
